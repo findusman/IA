@@ -1,0 +1,53 @@
+[
+  { "name": "Xero", "category": "accounting" },
+  { "name": "QuickBooks Online", "category": "accounting" },
+  { "name": "Sage Intacct", "category": "accounting" },
+  { "name": "Oracle NetSuite", "category": "accounting" },
+  { "name": "FreshBooks", "category": "accounting" },
+  { "name": "Zoho Books", "category": "accounting" },
+  { "name": "Wave Accounting", "category": "accounting" },
+  { "name": "Bokio", "category": "accounting" },
+  { "name": "Kashoo", "category": "accounting" },
+  { "name": "AccountsIQ", "category": "accounting" },
+
+  { "name": "Stripe", "category": "accounting" },
+  { "name": "PayPal", "category": "accounting" },
+  { "name": "Square", "category": "accounting" },
+  { "name": "Bill.com", "category": "accounting" },
+  { "name": "GoCardless", "category": "accounting" },
+  { "name": "Dext", "category": "accounting" },
+  { "name": "Stessa", "category": "accounting" },
+
+  { "name": "Gusto", "category": "accounting" },
+  { "name": "ADP", "category": "accounting" },
+  { "name": "BrightPay", "category": "accounting" },
+  { "name": "Paychex", "category": "accounting" },
+  { "name": "Rippling", "category": "accounting" },
+  { "name": "BambooHR", "category": "accounting" },
+
+  { "name": "Buildium", "category": "accounting" },
+  { "name": "AppFolio", "category": "accounting" },
+  { "name": "DoorLoop", "category": "accounting" },
+  { "name": "Yardi Breeze", "category": "accounting" },
+  { "name": "Rent Manager", "category": "accounting" },
+  { "name": "TenantCloud", "category": "accounting" },
+  { "name": "Entrata", "category": "accounting" },
+  { "name": "MRI Software", "category": "accounting" },
+
+  { "name": "Karbon", "category": "accounting" },
+  { "name": "Canopy", "category": "accounting" },
+  { "name": "TaxCalc", "category": "accounting" },
+  { "name": "Silverfin", "category": "accounting" },
+  { "name": "Inflo", "category": "accounting" },
+
+  { "name": "DocuSign", "category": "accounting" },
+  { "name": "PandaDoc", "category": "accounting" },
+
+  { "name": "Dropbox", "category": "accounting" },
+  { "name": "Google Drive", "category": "accounting" },
+  { "name": "Box", "category": "accounting" },
+
+  { "name": "Gmail", "category": "accounting" },
+  { "name": "Outlook", "category": "accounting" },
+  { "name": "Yahoo Mail", "category": "accounting" }
+]

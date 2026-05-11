@@ -1,0 +1,397 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tailwind v4 theme tokens */
+@theme {
+  /* Fonts */
+  --font-Jakarta: 'Plus Jakarta Sans', sans-serif;
+
+  /* Core palette */
+  --color-primary: #070707;
+  --color-secondary: #707172;
+  --color-dark: #060606;
+  --color-light: #feffff;
+
+  /* Extended palette */
+  --color-PrimaryBlack900: #060606;
+  --color-PrimaryBlack800: #070707;
+  --color-SecondaryWhite900: #575859;
+  --color-SecondaryWhite800: #707172;
+  --color-SecondaryWhite400: #e0e2e5;
+  --color-SecondaryWhite50: #feffff;
+  --color-Black: #101010;
+  --color-Grey: #808080;
+  --color-LightSilver: #d9d9d9;
+  --color-FlashWhite: #f0f0f0;
+  --color-White: #fff;
+  --color-Background: #1b1b1b;
+  --color-SuccessGreen: #32d583;
+  --color-LightBackgroundDark: #2b2b2b;
+  --color-borderBottom: #57585980;
+  --color-borderLight: #c7c9cb;
+
+  /* Legacy tokens used by landing page (preserved) */
+  --color-light-primary: #0f172a;
+  --color-light-secondary: #3b82f6;
+  --color-light-accent-1: #60a5fa;
+  --color-light-accent-2: #93c5fd;
+  --color-light-accent-3: #fbbf24;
+  --color-light-background: #f8fafc;
+  --color-light-surface: #ffffff;
+  --color-light-border: #ffffff53;
+  --color-light-text-primary: #0f172a;
+  --color-light-text-secondary: #475569;
+  --color-light-text-tertiary: #64748b;
+
+  --color-dark-primary: #f97316;
+  --color-dark-secondary: #ea580c;
+  --color-dark-accent-1: #fb923c;
+  --color-dark-accent-2: #f59e0b;
+  --color-dark-accent-3: #d97706;
+  --color-dark-background: #0a0e17;
+  --color-dark-surface: #111827;
+  --color-dark-border: #1f2937;
+  --color-dark-text-primary: #f1f5f9;
+  --color-dark-text-secondary: #cbd5e1;
+  --color-dark-text-tertiary: #94a3b8;
+}
+
+/* Animations */
+@keyframes ping-staggered {
+  0%,
+  75%,
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@utility animate-ping-staggered {
+  animation: ping-staggered 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@utility animate-loading {
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+/* Global base: apply to all pages EXCEPT landing (marked via data-landing) */
+body:not([data-landing]) {
+  @apply font-Jakarta bg-[#F6F8FA] dark:bg-Black text-Black dark:text-White select-none;
+}
+
+body:not([data-landing]) button:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Optional app root constraint if used */
+#root {
+  @apply max-w-480 w-full mx-auto;
+}
+
+/* Custom Classes */
+.SidebarGradinent {
+  opacity: 0.8;
+  background: linear-gradient(
+    90deg,
+    rgba(62, 62, 62, 0.2) 0%,
+    #1f1f1f 36.5%,
+    rgba(31, 31, 31, 0.5) 66%,
+    rgba(62, 62, 62, 0.2) 100%
+  );
+}
+
+/* Hide Default Scroll Bar */
+.scrollable-div {
+  @apply overflow-auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.scrollable-div::-webkit-scrollbar {
+  display: none;
+}
+
+.table-cell-base-styles {
+  @apply border-t border-l border-borderLight dark:border-SecondaryWhite800 p-2 flex items-center;
+}
+
+/* Customize Scroll Bar */
+.custom-scrollbar::-webkit-scrollbar {
+  @apply w-1.5 h-1.5;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-Black dark:bg-[#E0E2E5] cursor-pointer;
+}
+.needed .custom-scrollbar::-webkit-scrollbar,
+.trackCompetitor .custom-scrollbar::-webkit-scrollbar,
+.horizontalScroll.custom-scrollbar::-webkit-scrollbar,
+.PerformingTabs .custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-Black dark:bg-SecondaryWhite50;
+}
+.needed .custom-scrollbar::-webkit-scrollbar,
+.trackCompetitor .custom-scrollbar::-webkit-scrollbar,
+.horizontalScroll.custom-scrollbar::-webkit-scrollbar,
+.PerformingTabs .custom-scrollbar::-webkit-scrollbar {
+  @apply h-1.25;
+}
+
+/* Default Styles For Our Custom Scrollbar */
+.default .custom-scrollbar::-webkit-scrollbar {
+  @apply h-1.5;
+}
+.fromDropdown .custom-scrollbar::-webkit-scrollbar-thumb,
+.default .custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-Black dark:bg-[#E0E2E5];
+}
+
+/* Input Classes For Login & Signup Page */
+.Input {
+  @apply px-4 py-2.5 outline-none rounded-[100px] text-Black;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-Black opacity-100 dark:bg-White;
+}
+
+.BoxyBg {
+  @apply bg-SecondaryWhite400 text-Black dark:bg-SecondaryWhite900 dark:text-White/80 shadow-Black/10 dark:shadow-White/10 shadow-sm;
+}
+.BoxyBorder {
+  @apply border-borderLight dark:border-SecondaryWhite800;
+}
+
+.sideBarBG {
+  border-radius: 16px;
+  background: var(
+    --Gradient-Gradient,
+    linear-gradient(
+      90deg,
+      rgba(62, 62, 62, 0.6) 0%,
+      rgba(43, 43, 43, 0.6) 36.5%,
+      rgba(43, 43, 43, 0.6) 66%,
+      rgba(62, 62, 62, 0.6) 100%
+    )
+  );
+}
+
+/* Loader Animation Classes */
+.loader {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #f04438;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  @apply h-5 w-5;
+}
+.icon-sm {
+  @apply h-4 w-4;
+}
+
+.btn-small {
+  @apply flex items-center gap-1.5 rounded-[100px] bg-FlashWhite px-4 py-2 text-sm text-Black dark:bg-SecondaryWhite800 dark:text-White;
+}
+
+/* Generic Button Classes */
+.btn {
+  @apply flex items-center justify-center gap-2 rounded-[100px] cursor-pointer text-nowrap;
+}
+
+.btnGradintPrimary {
+  @apply bg-linear-to-r from-cyan-600 via-emerald-600 to-slate-700 hover:from-cyan-500 hover:via-emerald-500 hover:to-slate-600 text-white font-semibold py-3 px-5 
+  rounded-[100px] transition-all shadow-lg shadow-cyan-500/40 hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Additional gradient button skins */
+.btnGradintSecondary {
+  @apply bg-linear-to-r from-slate-600 via-gray-700 to-gray-800 hover:from-slate-500 hover:via-gray-600 hover:to-gray-700 text-white font-semibold py-3 px-5 rounded-[100px] transition-all shadow-lg shadow-slate-500/40 hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btnGradintDanger {
+  @apply bg-linear-to-r from-red-600 via-rose-600 to-red-800 hover:from-red-500 hover:via-rose-500 hover:to-red-700 text-white font-semibold py-3 px-5 rounded-[100px] transition-all shadow-lg shadow-red-500/40 hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btnGradintAlert {
+  @apply bg-linear-to-r from-yellow-500 via-amber-500 to-orange-600 hover:from-yellow-400 hover:via-amber-400 hover:to-orange-500 text-black font-bold py-3.5 px-6 rounded-[100px] transition-all shadow-lg shadow-amber-400/40 hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btnGradintSuccess {
+  @apply bg-linear-to-r from-emerald-600 via-green-600 to-teal-700 hover:from-emerald-500 hover:via-green-500 hover:to-teal-600 text-white font-semibold py-3 px-5 rounded-[100px] transition-all shadow-lg shadow-emerald-500/40 hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btnGradintInfo {
+  @apply bg-linear-to-r from-cyan-600 via-sky-600 to-blue-700 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-600 text-white font-semibold py-3 px-5 rounded-[100px] transition-all shadow-lg shadow-cyan-500/40 hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.LandingPageBtnWithGrdient {
+  @apply px-6 py-3 bg-linear-to-r from-purple-600 to-cyan-600  font-medium text-base hover:shadow-[0_0_60px_rgba(168,85,247,0.8)] transition-all rounded-[100px] flex items-center gap-2 cursor-pointer;
+}
+
+.btnSkinPrimary {
+  @apply text-White bg-LightBackgroundDark dark:text-Black dark:bg-SecondaryWhite50 hover:bg-Black dark:hover:bg-SecondaryWhite50/80 duration-300;
+}
+.btnSkinSecondary {
+  @apply text-Black bg-SecondaryWhite400 dark:text-White/80 dark:bg-SecondaryWhite900 hover:bg-[#e0e2d5] dark:hover:bg-SecondaryWhite800 duration-300;
+}
+
+.lightHover {
+  @apply hover:bg-[#C7C9CB] dark:hover:bg-SecondaryWhite800 rounded-[100px] flex items-center gap-2 p-2 duration-300 cursor-pointer;
+}
+
+/* Map Related */
+.leaflet-container {
+  background: #707172;
+  outline: 0;
+}
+
+.appBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 500px;
+}
+
+/* ACQUIRE, INSIGHT & INQUIRE module classes */
+.btn-base {
+  @apply justify-center rounded-[100px] px-6 py-3 flex items-center gap-2;
+}
+.BtnRound24,
+.btn-p {
+  @apply justify-center rounded-[100px] px-6 py-3 flex items-center gap-2 bg-dark/30 text-light hover:bg-PrimaryBlack800 hover:text-White dark:bg-light/20 dark:text-White dark:hover:bg-SecondaryWhite400 dark:hover:text-Black;
+}
+.BtnRound24-selected,
+.btn-p-selected {
+  @apply justify-center rounded-[100px] px-6 py-3 flex items-center gap-2 bg-LightBackgroundDark text-White dark:bg-SecondaryWhite400 dark:text-Black;
+}
+.border-color {
+  @apply border-dark/10 dark:border-light/10;
+}
+.color {
+  @apply bg-SecondaryWhite400 text-Black dark:bg-LightBackgroundDark dark:text-White;
+}
+.color-dark {
+  @apply bg-SecondaryWhite800 text-Black dark:bg-dark/30 dark:text-White;
+}
+.color-invert {
+  @apply bg-LightBackgroundDark text-White dark:bg-SecondaryWhite400 dark:text-Black;
+}
+.main-container {
+  @apply flex flex-col gap-2 w-full rounded-2xl p-6 border bg-SecondaryWhite50 dark:border-LightBackgroundDark dark:bg-Background;
+}
+
+/* AdCard Layout */
+.gutter {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.btnDisabled {
+  background-color: #d3d3d3;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Global custom scrollbar defaults */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+/* Custom Pagination Animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slideIn {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Base input styles */
+.formFieldStyles {
+  @apply w-full border py-3 px-6 pl-12 bg-transparent border-SecondaryWhite900 rounded-[100px] focus-within:bg-transparent focus:border-blue-500 focus:border-2 focus:outline-none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 182, 212, 0.6),
+    rgba(16, 185, 129, 0.6)
+  );
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 182, 212, 0.8),
+    rgba(16, 185, 129, 0.8)
+  );
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
