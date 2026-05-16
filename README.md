@@ -274,6 +274,10 @@ Key principles:
 * Controlled access to operational data
 * User-controlled integrations
 
+All data handling practices are aligned with UK GDPR and Data Protection Act 2018 requirements.
+Users retain full rights over their personal data, including access, correction, and deletion.
+Data is processed only for explicitly defined and legitimate operational purposes with strict minimisation principles.
+
 The platform is intended to operate in compliance with modern data protection and privacy standards.
 
 ---
@@ -330,6 +334,19 @@ Features, integrations, workflows, and UI components are continuously evolving a
 * Cross-system integration specialist
 
 ---
+
+
+# Co-Founder Capability
+
+"Fizza Tahir"
+
+* Digital marketing & growth strategy experience
+* Background in SEO, content marketing, and performance campaigns
+* Academic specialization in Digital Marketing (MPhil)
+* Experience supporting business visibility and lead generation initiatives
+* Focus on user acquisition, market positioning, and scalable growth 
+strategy
+
 
 # License
 
