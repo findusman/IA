@@ -336,7 +336,7 @@ Features, integrations, workflows, and UI components are continuously evolving a
 ---
 
 
-# Co-Founder Capability
+# Co-Founder 
 
 "Fizza Tahir"
 
