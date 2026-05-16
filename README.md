@@ -333,6 +333,8 @@ Features, integrations, workflows, and UI components are continuously evolving a
 * Full-stack & AI systems developer
 * Cross-system integration specialist
 
+Linkedin: https://www.linkedin.com/in/findusman
+
 ---
 
 
@@ -346,6 +348,8 @@ Features, integrations, workflows, and UI components are continuously evolving a
 * Experience supporting business visibility and lead generation initiatives
 * Focus on user acquisition, market positioning, and scalable growth 
 strategy
+
+Linkedin: www.linkedin.com/in/fizza-tahir-202312172
 
 
 # License
